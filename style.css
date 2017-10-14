@@ -1,0 +1,140 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* universal styling */
+* {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #00339d;
+}
+
+.cursive {
+  font-family: 'Fascinate Inline', cursive;
+}
+
+.align-center {
+  text-align: center;
+}
+
+body {
+  background-color: #6699ff;
+}
+
+.header {
+  margin
+  margin: 0 auto;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 30px;
+  color: #00339d;
+}
+
+.header p a {
+  color: #00339d;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.actions > div {
+  background-color: #00339d;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 30%;
+}
+
+.creation-window {
+  display: none;
+  position: fixed;
+  top: 5vh;
+  bottom: 5vh;
+  left: 5vw;
+  right: 5vw;
+  background-color: white;
+  box-shadow: 0 0 100px 20px black;
+  padding: 2vw;
+}
+
+.creation-window .x-out {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 300%;
+}
+
+.creation-window .input {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.creation-window label {
+  width: 100%;
+  font-size: 300%;
+  text-align: center;
+  display: block;
+}
+
+.creation-window > .input > div {
+  margin-bottom: 30px;
+}
+
+.creation-window input {
+  height: 20px;
+  padding: 20px;
+  display: block;
+  width: 100%;
+  border: 2px solid #00339d;
+}
+
+.creation-window .create > a {
+  font-size: 300%;
+  background-color: white;
+  border: 2px solid #00339d;
+  padding: 10px;
+  border-radius:10px;
+  margin: 0 auto;
+  display: block;
+  text-align:center;
+}
+
+.activities-container {
+  margin: 15px;
+  padding: 15px;
+}
+
+.activities-container .activity {
+  background-color: white;
+  border: 2px solid #00339d;
+  padding: 15px;
+}
+
+.activities-container .activity > * {
+  display: inline-block;
+}
+
+.activities-container .activity > h2 {
+  margin-right: 15px;
+}
+
+.activities-container .activity .description {
+  display: block;
+}
