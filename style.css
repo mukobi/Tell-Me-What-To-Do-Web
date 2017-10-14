@@ -34,21 +34,40 @@ body {
   margin: 0 auto;
   background-color: white;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 5vw;
   color: #00339d;
+}
+
+.header h1 {
+  font-size: 40pt;
+}
+@media only screen and (max-width: 570px) {
+  .header h1 {
+    font-size: 30pt;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .header h1 {
+    font-size: 25pt;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .header h1 {
+    font-size: 20pt;
+  }
 }
 
 .header p a {
   color: #00339d;
 }
 
-.actions {
+body > .actions {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.actions > div {
+body > .actions > a {
   background-color: #00339d;
   color: white;
   border: 2px solid white;
@@ -59,27 +78,40 @@ body {
   width: 30%;
 }
 
-.creation-window {
-  display: none;
-  position: fixed;
-  top: 5vh;
-  bottom: 5vh;
-  left: 5vw;
-  right: 5vw;
+
+/* creation window */
+
+.pop-up-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  width: 90%;
+  max-width: 800px;
   background-color: white;
   box-shadow: 0 0 100px 20px black;
   padding: 2vw;
+  opacity: 0;
+  transition: opacity 250ms;
+  pointer-events: none;
 }
 
-.creation-window .x-out {
+.pop-up-window.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.x-out {
   position: absolute;
   top: 15px;
   right: 15px;
   font-size: 300%;
 }
 
-.creation-window .input {
+.pop-up-window .content {
   width: 80%;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -93,7 +125,7 @@ body {
   display: block;
 }
 
-.creation-window > .input > div {
+.creation-window > .content > div {
   margin-bottom: 30px;
 }
 
@@ -116,25 +148,85 @@ body {
   text-align:center;
 }
 
-.activities-container {
-  margin: 15px;
-  padding: 15px;
-}
+
+/* activities */
 
 .activities-container .activity {
   background-color: white;
   border: 2px solid #00339d;
   padding: 15px;
+  margin: 5vw;
 }
 
 .activities-container .activity > * {
   display: inline-block;
 }
 
-.activities-container .activity > h2 {
+.activities-container .activity > *:not(:last-child) {
   margin-right: 15px;
 }
 
 .activities-container .activity .description {
+}
+
+
+/* tell me window */
+
+.tell-me-window {
   display: block;
+}
+
+.tell-me-window .content {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tell-me-window p, .tell-me-window h2 {
+  font-size: 200%;
+  margin-bottom: 10px;
+}
+
+.tell-me-window .actions {
+  position: absolute;
+  bottom: 15px;
+  right: 10%;
+  left: 10%;
+}
+
+.tell-me-window .actions > a {
+  font-size: 150%;
+  color: #00339d;
+  background-color: white;
+  border: 2px solid #00339d;
+  padding: 10px;
+  border-radius:10px;
+  display: inline-block;
+  text-align:center;
+  width: 49%;
+}
+
+.tell-me-window .actions > a:first-child {
+  width: 100%;
+}
+
+/* clear window */
+
+.clear-window h2 {
+  font-size: 200%;
+  margin-bottom: 15px;
+}
+
+.clear-window .actions .action-clear {
+  font-size: 150%;
+  color: #00339d;
+  background-color: white;
+  border: 2px solid #00339d;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align:center;
+  width: 100%;
 }

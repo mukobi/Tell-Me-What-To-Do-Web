@@ -1,12 +1,27 @@
 window.onload = function() {
-updateItems()
-  $("#action-new").click(function() {
-    $(".creation-window").toggle();
+  updateItems()
+  $(".action-new").click(function() {
+    $(".creation-window").addClass("active");
   });
-  $(".x-out").click(function() {
-    $(".creation-window").toggle();
+  $(".creation-window .x-out").click(function() {
+    $(".creation-window").toggleClass("active");
   });
-  $("#action-clear").click(function() {
+
+  $(".action-tell-me").click(function() {
+    $(".tell-me-window").addClass("active");
+  });
+  $(".tell-me-window .x-out").click(function() {
+    $(".tell-me-window").toggleClass("active");
+  });
+
+  $(".action-open-clear").click(function() {
+    $(".clear-window").addClass("active");
+  });
+  $(".clear-window .x-out").click(function() {
+    $(".clear-window").toggleClass("active");
+  });
+
+  $(".action-clear").click(function() {
     clearLocalStorage();
     updateItems();
   });
@@ -28,7 +43,10 @@ updateItems()
     allJsonData[title] = newActivityEntry;
     console.log(JSON.stringify(allJsonData));
     localStorage.setItem('allJsonData', JSON.stringify(allJsonData));
-    updateItems()
+    updateItems();
+    $(".creation-window").toggleClass("active");
+    $(".creation-window .title").val("");
+    $(".creation-window .description").val("");
   });
 }
 
