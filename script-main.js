@@ -1,6 +1,8 @@
 window.onload = function() {
   updateItems()
   $(".action-new").click(function() {
+    $(".pop-up-window.tell-me-window").removeClass("active");
+    $(".pop-up-window.clear-window").removeClass("active");
     $(".creation-window").addClass("active");
   });
   $(".creation-window .x-out").click(function() {
@@ -13,6 +15,8 @@ window.onload = function() {
   });
 
   $(".action-open-clear").click(function() {
+    $(".pop-up-window.creation-window").removeClass("active");
+    $(".pop-up-window.tell-me-window").removeClass("active");
     $(".clear-window").addClass("active");
   });
   $(".clear-window .x-out").click(function() {
@@ -56,24 +60,31 @@ window.onload = function() {
     $("#input_times").val("");
   });
 
-  $(".activity").click(function() {
-    var focusedActivity = $(this)[0].firstChild.innerHTML;
-    $(".tell-me-window").addClass("active");
-  });
-
   $(".action-do-it").click(doItFunction);
 
   document.addEventListener('keydown', function(event) {
     if(!($(".pop-up-window.creation-window").hasClass("active"))) {
       if(event.keyCode ==  84) tellMeDifferentFunction(); // t
-      else if(event.keyCode ==  68) doItFunction(); // d
       else if(event.keyCode ==  88) { // x
-        console.log("X");
         $(".pop-up-window.creation-window").removeClass("active");
         $(".pop-up-window.tell-me-window").removeClass("active");
         $(".pop-up-window.clear-window").removeClass("active");
       }
     }
+  });
+
+  $(".activities-container").on("click", ".activity", function() {
+    console.log("clicked");
+    var title = $(this)[0].firstChild.innerHTML;
+    console.log(title);
+    var allJsonData = getStoredJSON();
+    var description = allJsonData[title].description;
+    var count = allJsonData[title].count;
+    $(".tell-me-window .title").text(title);
+    $(".tell-me-window .description").text(description);
+    $(".tell-me-window .count").text("Done " + count + " times");
+    $(".tell-me-window").addClass("active");
+    return;
   });
 }
 
