@@ -147,6 +147,8 @@ body > .actions > .action-open-clear {
   display: block;
   width: 100%;
   border: 2px solid #00339d;
+  text-align: center;
+  font-size: 130%;
 }
 
 .creation-window .create > a {
@@ -165,7 +167,6 @@ body > .actions > .action-open-clear {
 
 .activities-container {
   margin-bottom: 30px;
-
 }
 
 .activities-container .activity {

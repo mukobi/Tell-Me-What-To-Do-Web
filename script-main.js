@@ -57,7 +57,7 @@ window.onload = function() {
     $(".creation-window").toggleClass("active");
     $("#input_title").val("");
     $("#input_description").val("");
-    $("#input_times").val("");
+    $("#input_times").val("0");
   });
 
   $(".action-do-it").click(doItFunction);
